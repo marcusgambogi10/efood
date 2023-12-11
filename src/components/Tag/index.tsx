@@ -1,12 +1,17 @@
 import * as S from './styles'
 
-export type Props = {
-  size: 'small' | 'big'
-  children: string
+type TagType = {
+  id?: number
+  children?: string
 }
 
-const Tag = ({ children, size = 'small' }: Props) => {
-  return <S.Tag size={size}>{children}</S.Tag>
+const Tag = ({ children, id }: TagType) => {
+  if (children === 'Saiba mais') {
+    return <S.TagStyleButton to={`/perfil/${id}`}>{children}</S.TagStyleButton>
+  } else if (children === 'Destaque da Semana') {
+    return <S.TagStyleDestaque>{children}</S.TagStyleDestaque>
+  }
+  return <S.TagStyleImagem>{children}</S.TagStyleImagem>
 }
 
 export default Tag

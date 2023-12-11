@@ -1,19 +1,4 @@
-declare interface Item {
-  foto: string
-  preco: number
+declare type TipoProdutoCheckout = {
   id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
-
-declare type Food = {
-  id: number
-  titulo: string
-  destacado?: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio?: Item[]
+  price: number
 }

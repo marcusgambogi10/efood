@@ -1,19 +1,37 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { cores } from '../../styles'
 
-import { colors } from '../../styles'
-import { Props } from '.'
-
-export const Tag = styled.div<Props>`
-  width: ${(props) => (props.size === 'big' ? '121px' : '61px')};
-  height: 26px;
-  background-color: ${colors.primary};
-  padding: 6px 4px;
-  color: ${colors.secundary};
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 14px;
+export const TagStyleButton = styled(Link)`
+  text-decoration: none;
+  padding-top: 4px;
   text-align: center;
+  background-color: ${cores.rosaEscuro};
+  color: ${cores.rosaClaro};
+  font-size: 14px;
+  border: none;
+  margin-left: 8px;
+  width: 82px;
+  height: 30px;
+  margin-bottom: 8px;
+`
+
+export const TagStyleImagem = styled.button`
+  background-color: ${cores.rosaEscuro};
+  color: ${cores.rosaClaro};
+  border: none;
   position: absolute;
   top: 16px;
-  right: ${(props) => (props.size === 'big' ? '85px' : '16px')};
+  right: 16px;
+  width: 60px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+`
+
+export const TagStyleDestaque = styled(TagStyleImagem)`
+  top: 16px;
+  right: 85px;
+  width: 120px;
 `
